@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
@@ -14,7 +13,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 
 // Hardcoded credentials for each user type
 const CREDENTIALS = {
-  student: { username: "student", password: "student123" },
+  student: { username: "user", password: "user123" },
   admin: { username: "admin", password: "admin123" },
 }
 
@@ -52,28 +51,24 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      <div className="hidden w-1/2 lg:block">
-        {userType === "student" ? (
-          <Image
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS2fwYDpROAN7a8CJaaVfBWsU-sIs5aKz7dw&s"
-            alt="Student Login"
-            width={1080}
-            height={1080}
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <Image
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS2fwYDpROAN7a8CJaaVfBWsU-sIs5aKz7dw&s"
-            alt="Admin Login"
-            width={1080}
-            height={1080}
-            className="h-full w-full object-cover"
-          />
-        )}
+    <div className="relative min-h-screen w-full">
+      {/* Full-page background image */}
+      <div className="absolute inset-0 h-full w-full">
+        <Image
+          src="/college.jpg"
+          alt="Background"
+          fill
+          priority
+          className="object-cover"
+        />
       </div>
-      <div className="flex w-full items-center justify-center p-4 lg:w-1/2">
-        <div className="w-full max-w-md space-y-6 rounded-xl bg-white p-6 shadow-md sm:p-10">
+
+      {/* Overlay to improve form readability */}
+      <div className="absolute inset-0 bg-black/30" />
+
+      {/* Centered login form */}
+      <div className="relative flex min-h-screen items-center justify-center p-4">
+        <div className="w-full max-w-md space-y-6 rounded-xl bg-white p-6 shadow-lg sm:p-10">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900">Login to SRGEC Transportation Portal</h2>
             <p className="mt-2 text-sm text-gray-600">Enter your credentials to access the {userType} portal</p>
@@ -122,7 +117,7 @@ export default function LoginPage() {
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="student" id="student" />
-                  <Label htmlFor="student">Student</Label>
+                  <Label htmlFor="student">User</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="admin" id="admin" />
@@ -142,3 +137,4 @@ export default function LoginPage() {
     </div>
   )
 }
+

@@ -2,6 +2,7 @@ import { DashboardLayout } from "@/components/dashboard-layout"
 
 const studentSidebarItems = [
   { title: "Fee Details", href: "/student/fee-details" },
+  { title: "E-Pass", href: "/student/epass" },
   { title: "Student Status", href: "/student/status" },
   { title: "Scanner", href: "/student/scanner" },
 ]

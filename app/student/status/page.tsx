@@ -29,10 +29,10 @@ const db = getFirestore(app)
 // Define sidebar items
 const studentSidebarItems = [
   { title: "Fee Details", href: "/student/fee-details" },
+  { title: "E-Pass", href: "/student/epass" },
   { title: "Student Status", href: "/student/status" },
   { title: "Scanner", href: "/student/scanner" },
 ]
-
 // Define the type for RFID tag data
 interface HistoryEntry {
   date: string
