@@ -25,7 +25,7 @@ const studentData = {
   busRoute: "Route 7: Campus - City Center",
   busNumber: "KA-01-F-7890",
   photo: "/placeholder.svg?height=150&width=150",
-  qrCodeUrl: "https://srgec-transport.vercel.app/verify/ST2023001",
+  qrCodeUrl: "https://bus-new-website-final.vercel.app/verify/ST2023001",
 }
 
 export default function StudentEPass() {
